@@ -1,3 +1,5 @@
+package game;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -8,28 +10,20 @@ import java.util.ArrayList;
 
 public class WorldLoader {
 
-    public World world;
-
-    private ArrayList<Place> places;
-
-    public WorldLoader(ClientManager clientManager){
-        places = new ArrayList<>();
-        load();
-        world = new World(places, clientManager);
-    }
-
-    private void load(){
+    public ArrayList<Place> load(){
+        ArrayList<Place> places = new ArrayList<>();
         Gson gson = new Gson();
         try{
             JsonObject json = gson.fromJson(new FileReader("world.json"), JsonObject.class);
-            placesCreator((JsonArray) json.get("places"));
-            pathCreator((JsonArray) json.get("paths"));
+            placesCreator(places, (JsonArray) json.get("places"));
+            pathCreator(places, (JsonArray) json.get("paths"));
         }catch (IOException e){
             e.printStackTrace();
         }
+        return places;
     }
 
-    private void placesCreator(JsonArray json_places){
+    private void placesCreator(ArrayList<Place> places, JsonArray json_places){
         for(Object json_place : json_places){
             JsonObject json = (JsonObject) json_place;
             Place p = new Place(
@@ -44,18 +38,18 @@ public class WorldLoader {
         }
     }
 
-    private void pathCreator(JsonArray json_paths){
+    private void pathCreator(ArrayList<Place> places, JsonArray json_paths){
         for(Object json_path: json_paths){
             JsonObject json = (JsonObject) json_path;
             Path path = new Path(json.get("e").getAsString(), json.get("p").getAsInt());
-            Place place = findPlace(path.id);
+            Place place = findPlace(places, path.id);
             if(place != null){
                 place.addPath(path);
             }
         }
     }
 
-    private Place findPlace(int id){
+    private Place findPlace(ArrayList<Place> places, int id){
         for(Place place : places){
             if(place.id == id) {
                 return place;

@@ -1,3 +1,5 @@
+package net;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -7,16 +9,16 @@ import java.util.UUID;
 
 public class Client extends Thread{
 
-    public ClientManager clientManager;
-    public Socket socket;
-    public UUID uuid;
+    private Server server;
+    private Socket socket;
+    private UUID uuid;
 
     private BufferedReader reader;
     private DataOutputStream out;
     private String payload = "";
 
-    public Client(Socket socket, ClientManager clientManager){
-        this.clientManager = clientManager;
+    public Client(Server server, Socket socket){
+        this.server = server;
         this.socket = socket;
         try{
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -29,14 +31,15 @@ public class Client extends Thread{
 
     @Override
     public void run(){
-        try {
-            out.writeUTF(World.places.toString());
+        /*try {
+            out.writeUTF(game.World.places.toString());
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         while (socket.isConnected()){
             try{
+                // If socket is closed and we try to read this will dump an error
                 payload = reader.readLine();
             }catch (IOException e){
                 e.printStackTrace();
@@ -48,7 +51,7 @@ public class Client extends Thread{
             }
             System.out.println("Payload: " + payload);
         }
-        clientManager.removeClient(this);
+        server.removeClient(this);
     }
 
     public void send(String payload){

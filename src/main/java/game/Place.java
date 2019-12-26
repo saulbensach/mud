@@ -1,3 +1,5 @@
+package game;
+
 import java.util.ArrayList;
 
 public class Place {
@@ -30,7 +32,7 @@ public class Place {
 
     @Override
     public String toString() {
-        return "Place{" +
+        return "game.Place{" +
                 "id=" + id +
                 ", area=" + area +
                 ", x=" + x +

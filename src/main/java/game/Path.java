@@ -1,3 +1,5 @@
+package game;
+
 public class Path {
     public String exit;
     public int id;
@@ -9,7 +11,7 @@ public class Path {
 
     @Override
     public String toString() {
-        return "Path{" +
+        return "game.Path{" +
                 "exit='" + exit + '\'' +
                 ", id=" + id +
                 '}';
