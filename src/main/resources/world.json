@@ -1,0 +1,124 @@
+{
+  "riskLevels": [
+    {
+      "col": "#bcbcbc",
+      "id": 0,
+      "desc": "not evaluated"
+    },
+    {
+      "col": "#00ff00",
+      "id": 1,
+      "desc": "safe"
+    },
+    {
+      "col": "#ffff00",
+      "id": 2,
+      "desc": "mobs don't attack"
+    },
+    {
+      "col": "#ff8000",
+      "id": 3,
+      "desc": "mobs might attack"
+    },
+    {
+      "col": "#ff0000",
+      "id": 4,
+      "desc": "mobs will attack"
+    }
+  ],
+  "preferences": {},
+  "mudmapVer": "2.5.6",
+  "showPlaceID": "UNIQUE",
+  "tileCenterCol": "#cfbe86",
+  "pathCol": "#00ff00",
+  "areas": [
+    {
+      "col": "#808080",
+      "name": "nix_city",
+      "id": 1
+    }
+  ],
+  "fileVer": "2.0",
+  "home": {
+    "x": 0,
+    "y": 0
+  },
+  "places": [
+    {
+      "a": 1,
+      "r": 1,
+      "x": 0,
+      "y": 1,
+      "id": 0,
+      "l": 0,
+      "lvlMin": 0,
+      "co": [
+        "{\n  \"npc\": {\n    \"name\": \"idiot\"\n  }\n}"
+      ],
+      "n": "port"
+    },
+    {
+      "a": 1,
+      "r": 1,
+      "x": 0,
+      "y": 2,
+      "id": 1,
+      "l": 0,
+      "lvlMin": 0,
+      "co": [
+        "you'll find here armor and shit lmao"
+      ],
+      "n": "armor"
+    }
+  ],
+  "worldName": "test",
+  "pathColDefs": [],
+  "paths": [
+    {
+      "p": 1,
+      "e": "s"
+    },
+    {
+      "p": 0,
+      "e": "n"
+    }
+  ],
+  "meta": {
+    "showPaths": true,
+    "pathsCurved": true,
+    "tileSize": 120,
+    "showGrid": true,
+    "history": [
+      {
+        "x": -0.008333333333333333,
+        "y": 0.9833333333333334,
+        "l": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "l": 0
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "l": 0
+      },
+      {
+        "x": -0.016666666666666666,
+        "y": -0.008333333333333333,
+        "l": 0
+      }
+    ],
+    "showCursor": true
+  },
+  "layers": [
+    {
+      "centerY": 1,
+      "centerX": 0,
+      "name": "nix",
+      "id": 0
+    }
+  ],
+  "pathColNonCardinal": "#00ff00"
+}
