@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d7e4785-546a-4290-976a-9c27320df868" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/CommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ConsoleColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/ExitAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/InfoAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/SayAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/AbstractEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/EventDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/SocketEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/SocketEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/PlayerConnectedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/PlayerConnectedEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/PlayerDisconnectedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/player/PlayerDisconnectedEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tick/TickEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tick/TickEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tick/TickManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/world/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
@@ -16,8 +27,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/World.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

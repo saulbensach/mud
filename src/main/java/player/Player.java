@@ -1,36 +1,29 @@
-package net;
+package player;
 
-import commands.CommandHandler;
-import commands.ConsoleColors;
-import commands.actions.Action;
+import event.EventDispatcher;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.UUID;
 
-public class Client extends Thread{
+public class Player extends Thread{
 
-    private Server server;
     private Socket socket;
     private UUID uuid;
 
-    private BufferedReader reader;
+    private BufferedReader in;
     private DataOutputStream out;
     private String payload = "";
-    private CommandHandler commandHandler;
-    private ArrayList<Action> bufferedActions;
 
-    public Client(Server server, Socket socket){
-        this.server = server;
+    private boolean connected = true;
+
+    public Player(Socket socket){
         this.socket = socket;
-        bufferedActions = new ArrayList<>();
-        commandHandler = new CommandHandler(this);
         try{
-            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new DataOutputStream(socket.getOutputStream());
         }catch (IOException e){
             e.printStackTrace();
@@ -40,33 +33,17 @@ public class Client extends Thread{
 
     @Override
     public void run(){
-        send("");
-        send(ConsoleColors.welcome());
-        while (socket.isConnected()){
+        while(connected){
             try{
                 // If socket is closed and we try to read this will dump an error
-                payload = reader.readLine();
+                payload = in.readLine();
             }catch (IOException e){
-                //e.printStackTrace();
-                break;
+                EventDispatcher.getInstance().dispatch(new PlayerDisconnectedEvent(this));
             }
             if(payload == null){
-                break;
+                EventDispatcher.getInstance().dispatch(new PlayerDisconnectedEvent(this));
             }
-            handleAction(payload);
         }
-    }
-
-    private void handleAction(String payload){
-        String[] command = payload.split(" ", 2);
-        String args = "";
-        if(command.length > 1){
-            args = command[1];
-        }
-    }
-
-    public synchronized void update(){
-
     }
 
     public synchronized void send(String payload){
@@ -81,6 +58,7 @@ public class Client extends Thread{
     public void disconnect(){
         try{
             socket.close();
+            connected = false;
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -88,9 +66,9 @@ public class Client extends Thread{
 
     @Override
     public boolean equals(Object object){
-        if(object instanceof Client) {
-            Client c = (Client) object;
-            return c.uuid == this.uuid;
+        if(object instanceof Player) {
+            Player p = (Player) object;
+            return p.uuid == this.uuid;
         }
         return false;
     }

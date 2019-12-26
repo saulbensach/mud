@@ -3,6 +3,7 @@ package commands;
 import commands.actions.Action;
 import commands.actions.ExitAction;
 import commands.actions.InfoAction;
+import commands.actions.SayAction;
 import net.Client;
 
 import java.util.HashMap;
@@ -17,6 +18,7 @@ public class CommandHandler {
         actions = new HashMap<>();
         actions.put("exit", new ExitAction(client));
         actions.put("info", new InfoAction(client));
+        actions.put("say", new SayAction(client));
     }
 
     public void handle(String payload){
@@ -32,5 +34,4 @@ public class CommandHandler {
             actions.get(command[0]).run(args);
         }
     }
-
 }
