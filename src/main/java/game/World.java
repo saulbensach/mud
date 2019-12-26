@@ -1,5 +1,6 @@
 package game;
 
+import commands.ConsoleColors;
 import net.Client;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class World extends Thread{
     private void update(){
         synchronized (clients) {
             for(Client client : clients){
-                client.send("Update!");
+                //client.send(ConsoleColors.CYAN_BRIGHT + "Update!" + ConsoleColors.RESET);
             }
         }
     }

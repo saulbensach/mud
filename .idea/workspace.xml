@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d7e4785-546a-4290-976a-9c27320df868" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/World.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ConsoleColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/ExitAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/actions/InfoAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
@@ -14,30 +16,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ClientManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Exits.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FixedUpdate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Place.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/World.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/WorldLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Exits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FixedUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/World.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WorldLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/WorldLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/Client.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

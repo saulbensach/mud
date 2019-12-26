@@ -1,5 +1,8 @@
 package net;
 
+import commands.CommandHandler;
+import commands.ConsoleColors;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -16,10 +19,12 @@ public class Client extends Thread{
     private BufferedReader reader;
     private DataOutputStream out;
     private String payload = "";
+    private CommandHandler commandHandler;
 
     public Client(Server server, Socket socket){
         this.server = server;
         this.socket = socket;
+        commandHandler = new CommandHandler(this);
         try{
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new DataOutputStream(socket.getOutputStream());
@@ -31,33 +36,36 @@ public class Client extends Thread{
 
     @Override
     public void run(){
-        /*try {
-            out.writeUTF(game.World.places.toString());
-            out.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        send("");
+        send(ConsoleColors.welcome());
         while (socket.isConnected()){
             try{
                 // If socket is closed and we try to read this will dump an error
                 payload = reader.readLine();
             }catch (IOException e){
-                e.printStackTrace();
+                //e.printStackTrace();
                 break;
             }
-
             if(payload == null){
                 break;
             }
-            System.out.println("Payload: " + payload);
+            commandHandler.handle(payload);
         }
         server.removeClient(this);
     }
 
-    public void send(String payload){
+    public synchronized void send(String payload){
         try{
-            out.writeUTF(payload);
+            out.writeBytes(payload);
             out.flush();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void disconnect(){
+        try{
+            socket.close();
         }catch (IOException e){
             e.printStackTrace();
         }
