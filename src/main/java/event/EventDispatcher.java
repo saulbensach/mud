@@ -3,7 +3,7 @@ package event;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EventDispatcher {
+public class EventDispatcher{
 
     private static EventDispatcher dispatcher = null;
 

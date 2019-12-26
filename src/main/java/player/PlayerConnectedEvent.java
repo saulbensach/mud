@@ -18,5 +18,6 @@ public class PlayerConnectedEvent extends AbstractEvent {
         Player player = new Player(socket);
         player.start();
         world.addPlayer(player);
+        System.out.println("Players connected: " + world.getPlayerCount());
     }
 }

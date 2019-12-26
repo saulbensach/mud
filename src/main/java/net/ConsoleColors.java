@@ -1,4 +1,4 @@
-package commands;
+package net;
 
 public class ConsoleColors {
     // Reset

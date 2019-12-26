@@ -15,6 +15,7 @@ public class PlayerDisconnectedEvent extends AbstractEvent {
         World world = World.getInstance();
         world.removePlayer(player);
         player.disconnect();
+        System.out.println("Player disconnected!");
     }
 
 }

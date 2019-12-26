@@ -46,6 +46,14 @@ public class Player extends Thread{
         }
     }
 
+    private void commandsHandler(String payload){
+        String[] command = payload.split(" ", 2);
+        String args = "";
+        if(command.length > 1){
+            args = command[1];
+        }
+    }
+
     public synchronized void send(String payload){
         try{
             out.writeBytes(payload);
