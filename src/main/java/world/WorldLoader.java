@@ -1,8 +1,10 @@
-package game;
+package world;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import game.Path;
+import game.Place;
 
 import java.io.FileReader;
 import java.io.IOException;

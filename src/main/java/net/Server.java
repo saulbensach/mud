@@ -1,5 +1,7 @@
 package net;
 
+import actions.SayActionEvent;
+import actions.SayActionEventHandler;
 import event.EventDispatcher;
 import player.*;
 import world.World;
@@ -46,6 +48,7 @@ public class Server extends Thread{
         dispatcher.registerHandler(PlayerConnectedEvent.class, new PlayerConnectedEventHandler());
         dispatcher.registerHandler(PlayerDisconnectedEvent.class, new PlayerDisconnectedEventHandler());
         dispatcher.registerHandler(PlayerSendMessageEvent.class, new PlayerSendMessageEventHandler());
+        dispatcher.registerHandler(SayActionEvent.class, new SayActionEventHandler());
         dispatcher.registerHandler(TickEvent.class, new TickEventHandler());
 
         new TickManager().start();
